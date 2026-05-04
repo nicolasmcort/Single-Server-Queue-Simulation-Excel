@@ -36,10 +36,10 @@ En cada una de las hojas de simulación, se encuentran las siguientes columnas:
 | Columna | Descripción | Fórmula Lógica |
 | :--- | :--- | :--- |
 | **Cliente** | Número identificador del cliente (1 a 50). | Secuencial |
-| **Aleatorio Arribo** | Número aleatorio entre 0 y 1 para calcular el tiempo entre llegadas. | `RAND()` |
+| **Aleatorio Arribo** | Número aleatorio entre 0 y 1 para calcular el tiempo entre llegadas. | `RAND() - ALEATORIO()` |
 | **Tiempo entre llegadas** | Minutos que transcurren entre la llegada de un cliente y el anterior. | Según distribución |
 | **Tiempo de llegada** | Momento exacto en el tiempo (reloj) en que el cliente entra al sistema. | Acumulado de llegadas |
-| **Aleatorio Servicio** | Número aleatorio entre 0 y 1 para calcular el tiempo de atención. | `RAND()` |
+| **Aleatorio Servicio** | Número aleatorio entre 0 y 1 para calcular el tiempo de atención. | `RAND() - ALEATORIO()` |
 | **Tiempo de servicio** | Duración del trámite o atención del cliente en la caja. | Según distribución |
 | **Inicio de servicio** | Momento en que el cajero comienza a atender al cliente. | `MAX(Llegada, Fin Anterior)` |
 | **Fin de servicio** | Momento en que el cliente termina su atención y sale del sistema. | `Inicio + Servicio` |
