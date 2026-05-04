@@ -1,6 +1,6 @@
 # Documentación de la Simulación de Sistemas de Colas
 
-Esta documentación explica la estructura y el funcionamiento del archivo `Simulacion_Sistema_Colas.xlsx`, el cual simula un sistema de colas de un solo canal (una sola caja/servidor) bajo diferentes escenarios de distribución de probabilidad.
+Esta documentación explica la estructura y el funcionamiento del archivo `Simulacion_Sistema_Colas_Enteros.xlsx`, el cual simula un sistema de colas de un solo canal (una sola caja/servidor) bajo diferentes escenarios de distribución de probabilidad.
 
 ## Estructura del Archivo Excel
 
