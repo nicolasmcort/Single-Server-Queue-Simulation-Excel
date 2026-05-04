@@ -56,4 +56,4 @@ En cada una de las hojas de simulación, se encuentran las siguientes columnas:
    - Para la distribución **Exponencial**, se utilizó la fórmula de transformación inversa: `-LN(1-R)/lambda`.
    - Para la distribución **Normal**, se utilizó `NORMINV` para asegurar compatibilidad con diferentes versiones de Excel.
 3. **Interpretación de Resultados**: Al comparar los escenarios, notarás cómo la variabilidad de la distribución exponencial o la dispersión de la normal afectan directamente el tiempo de espera y el tiempo de ocio del servidor, incluso si las medias son similares.
-4. **Observaciones (después de correr la simulación repetidas veces)**: El `Tiempo Promedio de Espera` es menor en el Escencario 1 (Exp - U), pero mayor para `Tiempo Desocupado Total Cajero`. El `Tiempo Promedio en Sistema` es mayor en el Caso Base (U - U).
+4. **Observaciones (después de correr la simulación repetidas veces)**: El `Tiempo Promedio de Espera` es menor en el Escencario 1 (Exp - U), pero mayor para `Tiempo Desocupado Total Cajero`. El `Tiempo Promedio en Sistema` no sigue un patrón reconozible.
