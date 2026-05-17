@@ -12,7 +12,7 @@ Modela el sistema con distribuciones uniformes básicas.
 - **Distribución de Servicio**: Uniforme entre 1 y 6 minutos.
 
 ### 2. Escenario 1 (Exp-U)
-Analiza el impacto de llegadas aleatorias más variables.
+Analiza el impacto de llegadas aleatorias más variables (Proceso de Poisson).
 - **Distribución de Arribos**: Exponencial con una tasa media ($\lambda$) de 6 clientes por hora (0.1 clientes/minuto). Esto implica un tiempo promedio entre llegadas de 10 minutos.
 - **Distribución de Servicio**: Uniforme entre 1 y 6 minutos.
 
@@ -51,9 +51,9 @@ En cada una de las hojas de simulación, se encuentran las siguientes columnas:
 
 ## Observaciones y Notas Técnicas
 
-1. **Simulación Dinámica**: El archivo utiliza fórmulas de Excel en lugar de datos estáticos. Esto significa que cada vez que presionas **F9** o realizas un cambio, se generan nuevos números aleatorios y toda la simulación se actualiza instantáneamente.
+1. **Simulación Dinámica**: El archivo utiliza fórmulas de Excel en lugar de datos estáticos. Esto significa que cada vez que se presiona **F9** o se realiza un cambio, se generan nuevos números aleatorios y toda la simulación se actualiza instantáneamente de forma estocástica.
 2. **Uso de Funciones de Distribución**:
-   - Para la distribución **Exponencial**, se utilizó la fórmula de transformación inversa: `-LN(1-R)/lambda`.
-   - Para la distribución **Normal**, se utilizó `NORMINV` para asegurar compatibilidad con diferentes versiones de Excel.
-3. **Interpretación de Resultados**: Al comparar los escenarios, notarás cómo la variabilidad de la distribución exponencial o la dispersión de la normal afectan directamente el tiempo de espera y el tiempo de ocio del servidor, incluso si las medias son similares.
-4. **Observaciones (después de correr la simulación repetidas veces)**: El `Tiempo Promedio de Espera` es menor en el Escencario 1 (Exp - U), pero mayor para `Tiempo Desocupado Total Cajero`. El `Tiempo Promedio en Sistema` no sigue un patrón reconozible.
+   - Para la distribución **Exponencial**, se utilizó la fórmula de transformación inversa por el método de la transformada inversa: `-LN(1-R)/lambda`.
+   - Para la distribución **Normal**, se empleó la función `DISTR.NORM.INV` para asegurar compatibilidad con diferentes versiones de Excel.
+3. **Interpretación de la Variabilidad**: Al comparar los escenarios, se podría observar cómo la variabilidad del sistema afecta directamente el rendimiento del canal de atención, demostrando que las medias por sí solas no describen completamente el comportamiento de una fila de espera.
+4. **Observaciones (después de correr la simulación repetidas veces)**: El `Tiempo Promedio de Espera` es menor en el Escencario 1 (Exp - U), pero mayor para `Tiempo Desocupado Total Cajero`. Se tiende a registrar que el `Tiempo Promedio en Sistema` no sigue un patrón fácilmente reconocible entre iteraciones. Esto ocurre porque este indicador es la suma directa del tiempo de espera y el tiempo de servicio ($Tiempo\ en\ el\ Sistema = Espera + Servicio$). Al combinar dos fuentes distintas de variabilidad estocástica, pequeñas fluctuaciones en los números aleatorios iniciales pueden causar que el promedio global sea altamente sensible al orden de llegada de los clientes en muestras finitas (como la de 50 usuarios).
